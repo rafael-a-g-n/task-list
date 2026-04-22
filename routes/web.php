@@ -3,9 +3,15 @@
 use App\Http\Requests\TaskRequest;
 use App\Models\Task;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 Route::get('/', function (){
     return redirect()->route('tasks.index');
+});
+
+Route::get('/health-db', function () {
+    DB::select('SELECT 1');
+    return response('OK', 200);
 });
 
 Route::get('/tasks', function () {
