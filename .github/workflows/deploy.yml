@@ -3,7 +3,8 @@ name: Deploy to Render
 on:
   push:
     branches:
-      - main # Change this if your default branch is 'master'
+      - main 
+  workflow_dispatch:
 
 jobs:
   deploy:
