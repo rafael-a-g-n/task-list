@@ -1,66 +1,77 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📝 Laravel Task List
+
+🚀 [Live Demo](https://task-list-ieo6.onrender.com)
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+	<img src="https://img.shields.io/badge/Laravel-8.3-red?logo=laravel" alt="Laravel">
+	<img src="https://img.shields.io/badge/PHP-8.3-blue?logo=php">
+	<img src="https://img.shields.io/badge/MySQL-Database-yellow?logo=mysql">
+	<img src="https://img.shields.io/badge/Docker-Ready-blue?logo=docker">
+	<img src="https://img.shields.io/badge/Composer-Dependency-green?logo=composer">
 </p>
 
-## About Laravel
+## ✨ Overview
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Laravel Task List is a simple yet robust web application for managing your daily tasks. Built with the power of Laravel, it demonstrates modern PHP development, clean architecture, and a smooth user experience.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🌟 Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- 📝 Create, view, edit, and delete tasks
+- ✅ Toggle task completion status
+- 📄 Paginated task list
+- 🛡️ Form validation for all task fields
+- 🩺 Health check endpoint for database
+- 🎨 Clean Blade UI templates
 
-## Learning Laravel
+## 🛠️ Skills & Technologies Leveraged
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Laravel** (Routing, Eloquent ORM, Blade, Validation)
+- **PHP 8.3**
+- **Composer**
+- **MySQL** (or compatible DB)
+- **Docker** (for containerized dev)
+- **HTML5 & CSS3**
+- **MVC Architecture**
+- **RESTful Principles**
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🚦 Quick Start
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+git clone https://github.com/rafael-a-g-n/task-list.git
+cd task-list
+composer install
+cp .env.example .env
+# Edit .env for your DB credentials
+php artisan key:generate
+php artisan migrate
+php artisan serve
+```
 
-## Laravel Sponsors
+Visit [http://localhost:8000](http://localhost:8000) in your browser.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🔗 Main Endpoints
 
-### Premium Partners
+- `/tasks` — List all tasks (paginated)
+- `/tasks/create` — Create a new task
+- `/tasks/{task}` — View a single task
+- `/tasks/{task}/edit` — Edit a task
+- `/tasks/{task}` (PUT) — Update a task
+- `/tasks/{task}` (DELETE) — Delete a task
+- `/tasks/{task}/toggle-complete` (PUT) — Toggle completion status
+- `/health-db` — Database health check
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 🗂️ Model Structure
 
-## Contributing
+**Task**
+- `title` (string)
+- `description` (string)
+- `long_description` (string)
+- `completed` (boolean)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🧩 Dev Container & Codespaces
 
-## Code of Conduct
+This project includes a Dockerfile for consistent PHP/Laravel setup. For GitHub Codespaces or VS Code Dev Containers, add a `.devcontainer/devcontainer.json` referencing the Dockerfile for automatic environment setup.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📄 License
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
