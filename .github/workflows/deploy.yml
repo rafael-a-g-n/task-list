@@ -1,0 +1,24 @@
+name: Deploy to Render
+
+on:
+  push:
+    branches:
+      - main 
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      deployments: write # Strictly required to update the GitHub Deployments UI
+      contents: read
+    steps:
+      - name: Trigger Render Deploy & Update GitHub UI
+        uses: JorgeLNJunior/render-deploy@v1.5.0
+        with:
+          service_id: ${{ secrets.RENDER_SERVICE_ID }}
+          api_key: ${{ secrets.RENDER_API_KEY }}
+          github_deployment: true # This flags GitHub to show it in the UI!
+          deployment_environment: 'production'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          wait_deploy: true # Keeps the action running until Render finishes the build
